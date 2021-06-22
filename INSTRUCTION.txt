@@ -1,0 +1,54 @@
+The code is taken from code.txt
+There are 6 commands in this language
+
+The NOTE command
+Marked by a ~ instead of the word NOTE
+Translator ignores that line, but still counts as a line in a LOOP command
+cannot note inside a PRINT command
+-- eg --
+~ this is a note
+~ 00 01 10 11
+
+The INIT command
+How you create variables
+Takes 2 terms
+Term 1 is the name of the variable to be kept in the dictionary
+Term 2 is what to assign to that name
+If Term 2 starts with an i, it is an integer
+If Term 2 starts with an s, it is a string
+Else it is whatever is written there, as a string
+-- eg --
+INIT word sHello
+INIT num i7
+INIT trash this_is_a_string
+
+The VAR command
+Used to change variables already created through INIT
+Can be used to create variables like INIT, but is not recommended
+Takes 3 terms
+Term 1 is the name of the variable you are changing
+Term 2 is the operator, or what to do with that variable
+'+':+=
+'-':-=
+'*':*=
+'=':=
+'^':**=
+'/':/=
+'%':%=
+'!':math.factorial()
+'@X':val**(1/int(X))
+Term 3 is what is used to chang Term 1, works like INIT (i=int, s=str, blank=str)
+-- eg --
+VAR num + i1
+VAR word + s_World!
+VAR trash + s.
+VAR num - 1
+VAR num * 10
+VAR num / 10
+VAR num ^ 2
+VAR num @2 i34969
+VAR num % 3500
+VAR num ! 100
+
+The IF command
+Jumps a few lines if a statement is False
